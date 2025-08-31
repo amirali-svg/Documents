@@ -2021,3 +2021,32 @@ const setDataDark = () => {
    localStorage.clear()
  }
  
+
+
+// * Animation
+
+const animationBtn = document.querySelector("button");
+const divElem = document.querySelector("div");
+const statusElem = document.querySelector("p");
+
+const setAnimation = () => {
+  divElem.style.animation = "move 2s 3";
+};
+
+const animationStart = () => {
+  console.log("animation started");
+};
+
+const animationIteration = () => {
+  console.log("animation repeat");
+};
+
+const animationEnd = () => {
+  console.log("animation end");
+};
+animationBtn.addEventListener("click", setAnimation);
+// برای ست کردن انمیشن به هنگام کلیک روی دکمه
+divElem.addEventListener("animationstart", animationStart);
+divElem.addEventListener("animationiteration", animationIteration);
+divElem.addEventListener("animationend", animationEnd);
+// وقتی روی یک المنت انیمشن ست میشه این ایونت ها اتفاق میوفته به ترتیب
