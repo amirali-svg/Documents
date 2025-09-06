@@ -2050,3 +2050,10 @@ divElem.addEventListener("animationstart", animationStart);
 divElem.addEventListener("animationiteration", animationIteration);
 divElem.addEventListener("animationend", animationEnd);
 // وقتی روی یک المنت انیمشن ست میشه این ایونت ها اتفاق میوفته به ترتیب
+
+
+// * Method chaining
+// به معنی متد های زنجیره ای که یعنی میشه از متد ها به شکل پشت سر هم استفاده کرد
+let text = 'amir'
+
+console.log(text.split("").reverse().join("").trim());
