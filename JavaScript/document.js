@@ -2057,3 +2057,22 @@ divElem.addEventListener("animationend", animationEnd);
 let text = 'amir'
 
 console.log(text.split("").reverse().join("").trim());
+
+
+//* DOM => Document Object Model
+//* BOM => Browser Object Model
+
+// بام یعنی همون مرورگر و ما میتونیم به مرورگر کاربر دسترسی داشته باشیم
+// مثل هیستوری و ایپی کاربر 
+// تمام دستوراتی که داخل browser اجرا میشن زیر مجموعه window هستند
+
+//* screen object
+// اطلاعات صفحه نمایش کاربر رو نشون میده
+
+
+// * Browser history 
+// ادرس هایی که ما در یک تب مرورگر رفتیم رو نشون میده
+history.back() //به ادرس قبلی برمیگرده
+history.forward() // به ادرس بعدی میره
+history.go() // یک دلتا میگیره و به اون میره و. خود ادرس الان میشه صفر و قبلی ها با منفی یک شروع میشن
+history.length() // نشون میده کاربر به چندتا ادرس رفته
