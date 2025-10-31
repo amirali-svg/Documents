@@ -2076,3 +2076,38 @@ history.back() //به ادرس قبلی برمیگرده
 history.forward() // به ادرس بعدی میره
 history.go() // یک دلتا میگیره و به اون میره و. خود ادرس الان میشه صفر و قبلی ها با منفی یک شروع میشن
 history.length() // نشون میده کاربر به چندتا ادرس رفته
+
+// * گرفتن ایدی از url
+
+// ! Bad Way 
+let userId = location.search.slice(1).split('=')[1];
+
+// * Good way
+const searchParams = new URLSearchParams(location.search)
+userId = searchParams.get('id')//چیزی رو به اسم ایدی داریم میگیریم-
+
+// مثال
+
+const h1Elem = document.querySelector("h1");
+
+const users = [
+  { id: 1, username: "amin", email: "amin@gmail.com", age: 24 },
+  { id: 2, username: "qadir", email: "qadir@gmail.com", age: 22 },
+  { id: 3, username: "babak", email: "babak@gmail.com", age: 25 },
+  { id: 4, username: "sasan", email: "sasan@gmail.com", age: 28 },
+];
+
+const searchParams = new URLSearchParams(location.search);
+console.log(searchParams);
+
+const userId = searchParams.get("id");
+
+const mainUser = users.find((user) => {
+  return user.id === +userId;
+});
+
+if (mainUser) {
+  h1Elem.innerHTML = `username: ${mainUser.username}, email:${mainUser.email}, id: ${mainUser.id}`;
+} else {
+  h1Elem.innerHTML = `user not found with id ${userId}`;
+}
