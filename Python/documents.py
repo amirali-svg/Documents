@@ -7,11 +7,6 @@
 # print(f'Hello you are {name} {familyName} and you are {age:1.1f}')
 
 
-
-
-# Data Types
-
-
 # List (Arrays [])
 
 # names = ['jadi', 'zahra', 'sina', 'amir', 'ali']
@@ -29,7 +24,6 @@
 # my_list = [1, 2, 4]
 # my_list.insert(2, 3)   درج عدد 3 در ایندکس 2
 # print(my_list)   خروجی: [1, 2, 3, 4]
-
 
 
 # Dic (Object)
@@ -74,10 +68,9 @@
 # print(fruit_prices)
 
 
-
 # Tuple
 
-# همون لیست ولی با فرق اینکه نمیشه مقدار اونهارو عوض کرد یعنی اونها 
+# همون لیست ولی با فرق اینکه نمیشه مقدار اونهارو عوض کرد یعنی اونها
 # (Immutable)
 # هستند
 
@@ -94,223 +87,205 @@
 
 # Fileio
 # دیتایی که محتویات بقیه فایل هارو میخونه
+from pydoc import apropos
+from turtle import width
 
-# file_io = open('file.txt') #اوپن یه کلمه کلیدی هست
-# file_io.close() #فایل رو میبندیم و دیگه باهاش کاری نداریم
-# file_io.seek(0) #به اول فایل برمیگردیم
+
+file_io = open("file.txt")  # اوپن یه کلمه کلیدی هست
+file_io.close()  # فایل رو میبندیم و دیگه باهاش کاری نداریم
+file_io.seek(0)  # به اول فایل برمیگردیم
 
 # روش بهتر برای استفاده از fileio
 
-# with open('file.txt') as file_io_2 :
-#     lines = file_io_2.readlines()
-#     print(lines)
+with open("file.txt") as file_io_2:
+    lines = file_io_2.readlines()
+    print(lines)
 
-# بعد اتمام بلوک خودش فایل رو میبنده
+    # F String
 
-# FileIo modes:
+# name = 'Amirali'
+# familyName = 'Borji'
+# age = 16.439312
+#
+# print(f'Hello you are {name} {familyName} and you are {age:1.1f}')
 
-# with open('file.txt', "(modes)") as file_io_2 :
 
-# r: فقط خوندن
-# w: فقط برای نوشتن
-# rb or wb: برای خوندن یا نوشتن باینری
-# a: همون اضافه کردن
+# Lists (Arrays [])
+# names = ['jadi', 'zahra', 'sina', 'amir', 'ali']
+# things = [False, 2, 3.14, 'amir']
 
+# names.index('amir')
+# names.reverse()
+# names.pop()
+# names.append(10)
+# names.sort(w)
+# names.remove('zahra')
 
-# عملگرهای مقایسه ای
+# print(names)
 
-# ==, <, >, <=, >=, !=
 
-# تمرین
-# a=int(input("Enter number1: "))
-# b=int(input("Enter number2: "))
-# c=int(input("Enter number3: "))
-# print(a<b<c)
+# Dic (Object)
 
-
-
-# Statements
-
-# sen = 16
-
-# if sen < 18:
-#    print('salam bache')
-# elif sen < 40:
-#    print('salam miansal')
-# else :
-#    print('salam mosen')
-
-# تمرین سبد خرید
-
-price = int(input('mablagh kharid ra vared konid'))
-final_price = None
-
-if price > 50000:
-   final_price = price * (1 - 20 / 100)
-elif 50000 > price > 20000:
-   final_price = price * (1 - 10 / 100)
-else:
-   final_price = price
-
-
-print(final_price)
-
-
-
-
-# Loops
-
-# for
-
-list = [1, 2, 3, 4, 6, 10]
-even_numbers = []
-odd_numbers = []
-
-for list_item in list:
-   print(list_item) #هر سری که حلقه اجرا میشه یه ایتم از لیست رو پرینت میکنه
-   
-   if list_item % 2 == 0:
-      even_numbers.append(list_item)
-   else:
-      odd_numbers.append(list_item)
-
-
-
-print(f'Even numbers: \n{even_numbers}')
-print(f'Odd numbers: \n{odd_numbers}')
-
-
-Unpacking in js
-
-people = {'amirali': (16,180), 'amir': (16,183)}
-
-for sen, ghad in people.values():
-   print(sen,ghad)
-
-
-# While
-# تا زمانی که یه شرطی برقرار باشه دستورات اجرا میشن
-a = 0
-
-print('im starting')
-
-while a <= 5:
-   print(f'a is {a}')
-   a += 1
-print('finished')
-
-# مسئله مشهور «مسئله کولاچ» (Collatz conjecture)
-
-number = int(input('Adad  ra vared konid: '))
-
-while number != 1:
-   print(number)
-   if number % 2 == 0:
-      number = number // 2
-   else:
-      number =  (number * 3) + 1
-
-print(1)
-
-# دستور هایی برای خارج شدن از حلقه
-
-for item in [1, 2, 3]:
-   if item == 2:
-      # pass
-      # break
-      # بهش برسه لوپ میشکنه
-      continue
-      # باعث میشه دستورات بعد از این کلمه اجرا نشن و لوپ دوباره از اول با ایتم بعدی اجرا بشه
-   print(item)
-
-
-# تمرین برسی بخش پذیری اعداد به سبک باری هوپ
-
-n = 0
-
-while n < 200:
-   n += 1
-   if (n % 3 == 0) and (n % 5 == 0):
-      print('hiphop')
-      continue
-   if n % 3 == 0:
-      print('hope')
-      continue
-   if n % 5 == 0:
-      print('hip')
-      continue
-   print(n)
-
-
-   # List Comprehation
-
-# میشه بجای این کار
-list = [1, 2, 3, 4]
-
-# list_2 = []
-# for list_item in list:
-#    list_2.append(list_item * 2)
-# print(list_2)
-
-# # این کار رو بکنیم که حرفه ای تر و خلاصه تره
-# list_2 = [list_item * 2 for list_item in list]
-# print(list_2)
-
-
-
-# همین ترفند تو شرط ها
-# a = 6
-
-# resault = ('fard' if a % 2 != 0 else 'zoje')
-# print(resault)
-
-
-# اگر بخوایم لیستی بسازیم که از لیست قبلی عدد های زوجش رو به ما بده
-
-# list_2 = [n for n in list if n % 2 == 0]
-# print(list_2)
-
-#  یا اینکه به ازای هر عنصر لیست بگه زوجه یا فرد
-
-# list_2 = ['zoje' if n % 2 == 0 else 'fard' for n in list]
-# print(list_2)
-
-
-
-
-
-
-
-# enumerate
-
-list = ['amir', 'jadi', 'ali', 'sarah']
-
-for list, a in enumerate(list):
-   # متد بالا میاد اجزای یک لیست رو به صورت ایندکسی برمیگردونه و یجورایی شماره گذاری میکنه
-   print(list, a)
-
-
-
-# zip
-name = ['amir', 'soroosh']
-family = ['borji', 'mehr']
-
-for i in zip(name, family):
-   # دقیقا همون کاری رو میکنه که زیپ لباس انجام میده
-   print(i)
-
-
-# in
-
-names = ['amir', 'ali', 'jadi']
-
-people = {
-   'amir': {'sen': 16, 'ghad': 180},
-   'jadi': {'sen': 45, 'ghad': 180}
+score = {"riazi": 16, "programming": 20}
+scores = {
+    "jadi": {"riazi": 16, "programming": 21},
+    "amir": {"riazi": 15, "programming": 20},
 }
 
-for name in names:
-   if name in people:
-      print(f'{name} is {people[name]['sen']} and his height is {people[name]['ghad']}')
-   else:
-      print(f'i have no data for {name}')
+print(scores["amir"]["programming"])
+print(scores["jadi"]["riazi"])
+
+# scores.keys()
+# scores.values()
+# scores.items()
+print(scores.get("jadi"))
+
+# Function
+
+
+def sum(a, b):
+    """
+    Duck string
+    # برای توضیح یک تابع استفاده میشه
+    """
+    return a + b
+
+
+print(sum(1, 2))
+
+
+# n=1 یعنی اگر ان رو نداده بود اون رو ۱ در نظر بگیر
+def print_n_times(name, n=1):
+    for i in range(n):
+        print(name)
+
+
+print_n_times("amir")
+
+
+# Donation analysis
+
+donations = {"amir": 100, "sara": 2, "ali": 50, "ashkan": 20}
+
+
+def donations_analysis(don):
+    total = 0
+    count = 0
+    max_donation = -1
+    max_donation_person = ""
+
+    for name, value in don.items():
+        total += value
+        count += 1
+        if max_donation < value:
+            max_donation = value
+            max_donation_person = name
+
+    average = int(total / count)
+
+    return average, total, max_donation, max_donation_person
+
+
+avg, total, max_donation, max_donation_person = donations_analysis(donations)
+
+print(f"average: {avg}")
+print(f"total: {total}")
+print(f"thanks to {max_donation_person} for {max_donation} BTC")
+
+
+multiply = lambda x, y: x * y
+# lambda: توابع نا شناخته
+print(multiply(3, 4))
+
+
+# OOP
+
+# با کلاس ها میشه یه مفهومی تعریف کرد و این مهفوم رو به متغیر ها نسبت داد
+
+
+class person:
+    pass  # این کلاس هیچ کاری انجام نمیده
+
+
+class book:
+    book_type = "horror"
+
+    def __init__(self, page):
+        # self: خود متغیر که این کلاس رو بهش نسبت میدیم
+        # page: مفهومی که میخوایم نسبت بدیم مثلا تعداد ورقه ها که از ورودی دریافت میشه
+        self.pages = page
+
+    def open(self):
+        print(f"opened the book on last page ({self.pages})")
+
+
+book.book_type = "triller"  # بوک تایپ کلاس اصلی رو عوض میکنه نه اینستنس اون داخل یه متغیر خاص در نتیجه همه اینستنس ها هم به همین مقدار عوض میشوند
+
+
+mybook = book(276)
+print(mybook.pages)  # book.X: مفهومی که دنبال اون میگردیم
+
+
+# حساب کردن مساحت دایره با کلاس
+from turtle import circle
+
+
+class Circle:
+    pi = 3.1415926
+
+    def __init__(self, r):
+        self.r = r
+
+    def masahat(self):
+        m = self.r * self.r * self.pi
+        return m
+
+
+c1 = Circle(13)
+print(c1.masahat())
+
+# try except
+
+try:
+    # سعی میکنه یه کاری بکنه
+    print(10 / 0)
+except:
+    print("nattonestam!")
+
+# مثال بهتر:
+
+
+def divide(a, b):
+    try:
+        return a / b
+    except Exception as e:
+        # expsion as e :  خطا رو میگیره و داخل e قرار میده
+        print(f"Error in returning the result: {e}")
+        return None
+
+
+def divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        # expsion as e :  خطا رو میگیره و داخل e قرار میده
+        print("B can not be 0")
+        return None
+    except Exception as e:
+        print(f"Error in returning the result: {e}")
+
+
+# ارور های از قبل شناخته شده توسط پایتون: built-in Exeptions
+
+try:
+    # سعی میکنه یه کاری بکنه
+    print("try")
+except:
+    # اگه تلاش بالا این کار نکرد این کارو میکنه
+    print("except")
+else:
+    # اگه به ارور نخورد
+    print("else")
+finally:
+    # حتما این کارار رو هم بکن
+    print("finally")
