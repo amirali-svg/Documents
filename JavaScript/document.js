@@ -2162,3 +2162,34 @@ const double = (n) => {
 const ranNum = () => {
    console.log(Math.floor(Math.random() * num2));
 }
+
+
+
+//* Function Composition توابع تودرتو
+
+function trim(str) {
+   return str.trim();
+ }
+ 
+ function toLowerCase(str) {
+   return str.toLowerCase();
+ }
+ 
+ function generageLi(str) {
+   return `<li>${str}</li>`;
+ }
+ 
+ function addTodo(event) {
+   if (event.key === "Enter") {
+     const title = input.value;
+     console.log();
+ 
+     menu.insertAdjacentHTML("beforeend", generageLi(toLowerCase(trim(title))));
+      //  اینجا اتفاقی افتاده که به اصطلاح بهش میگن پرانتز هل
+      // چون کلی پرانتز تودرتو داریم
+ 
+     input.value = "";
+   }
+ }
+
+ 
