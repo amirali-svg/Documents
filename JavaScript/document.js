@@ -2192,4 +2192,8 @@ function trim(str) {
    }
  }
 
- 
+
+
+//* Higher Order Function (HOF)
+// یا توی ورودی تابع بگیره یا تابع برگردونه
+// مثل find, forEach, filter,....
