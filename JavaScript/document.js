@@ -2111,3 +2111,35 @@ if (mainUser) {
 } else {
   h1Elem.innerHTML = `user not found with id ${userId}`;
 }
+
+
+// اگر بخوایم ایونت لیسنری رو پاک بکنیم از 
+btn.removeEventListener("click", clickHandler)
+
+
+
+
+
+
+
+// *سطح پیشرفته
+
+// *Event Confings
+
+// ایونت لیسنر وروردی سومی هم میگیره که تنظیماتش هست
+btn.addEventListener('click', clickHandler, {
+   // میتونیم از وانس استفاده بکنیم تا ایونت فقط یکبار اجرا بشه
+   once: false
+})
+
+
+// * Event Delegation
+
+event.stopPropagation() //Prevent Bubbling
+
+//* Capture
+btn.addEventListener('click', clickHandler, {
+   // تغییر از بابلینگ به کپچر
+   capture: true
+})
+
