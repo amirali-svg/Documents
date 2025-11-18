@@ -2197,3 +2197,17 @@ function trim(str) {
 //* Higher Order Function (HOF)
 // یا توی ورودی تابع بگیره یا تابع برگردونه
 // مثل find, forEach, filter,....
+
+
+//* Arrow Function
+
+function double (n) {
+   return double * 2
+
+}
+
+const double = (n) => {
+   return n * 2
+}
+// یا
+const double = n => n * 2
