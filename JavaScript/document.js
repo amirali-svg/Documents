@@ -2143,3 +2143,22 @@ btn.addEventListener('click', clickHandler, {
    capture: true
 })
 
+
+
+//* Pure & Impure Functions
+// Input => output
+// هر ورودی یک خروجی داشته باشه
+// whitout Side-effect 
+// dont use global variable
+
+//! اگر یکی از این سه شرط نقض بشود تابع ناخالص است
+
+// Pure
+const double = (n) => {
+   return n * 2
+}
+
+// Impure
+const ranNum = () => {
+   console.log(Math.floor(Math.random() * num2));
+}
