@@ -1,19 +1,22 @@
-const firstLogs = () => {
-  console.log("log 1");
-  console.log("log 2");
-};
+let isLogin = true;
 
-const middleLogs = (cb) => {
+const testPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log("log 3");
-    cb()
-  }, 3000);
-};
+    if (isLogin) {
+      resolve();
+    } else {
+      reject();
+    }
+  }, 2000);
+});
 
-const lastLogs = () => {
-  console.log("log 4");
-  console.log("log 5");
-};
-
-firstLogs()
-middleLogs(lastLogs)
+testPromise
+  .then(() => {
+    console.log("succes");
+  })
+  .catch(() => {
+    console.log("err");
+  })
+  .finally(() => {
+    console.log("finish");
+  });
