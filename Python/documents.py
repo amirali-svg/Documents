@@ -289,3 +289,19 @@ else:
 finally:
     # حتما این کارار رو هم بکن
     print("finally")
+
+
+def divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        # expsion as e :  خطا رو میگیره و داخل e قرار میده
+        print("B can not be 0")
+        return None
+    except Exception as e:
+        print(f"Error in returning the result: {e}")
+
+
+print(divide(1, 5))
+print(divide(1, 0))
+print(divide(True, "awdwa"))
