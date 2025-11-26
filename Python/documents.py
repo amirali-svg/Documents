@@ -295,11 +295,11 @@ def divide(a, b):
     try:
         return a / b
     except ZeroDivisionError:
-        # expsion as e :  خطا رو میگیره و داخل e قرار میده
         print("B can not be 0")
         return None
-    except Exception as e:
-        print(f"Error in returning the result: {e}")
+
+    except ValueError:
+        print("Only numbers are allowed!")
 
 
 print(divide(1, 5))
@@ -331,3 +331,28 @@ class TestCountC(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# ارور هندلینگ فانکشن
+def divide(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        print("second number can not be 0!")
+        print("---------------------------")
+    except ValueError:
+        print("Only numbers are allowed!")
+        print("---------------------------")
+
+
+while True:
+    try:
+        num1 = int(input("Enter first number: "))
+        num2 = int(input("Enter second number: "))
+        result = divide(num1, num2)
+        if result != None:
+            print(f"result => {result}")
+    except:
+        print("Only numbers are allowed!")
+        print("---------------------------")
