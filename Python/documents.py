@@ -305,3 +305,29 @@ def divide(a, b):
 print(divide(1, 5))
 print(divide(1, 0))
 print(divide(True, "awdwa"))
+
+
+# تست نویسی در پایتون
+# کد
+def count_c(s, c):
+    found = 0
+    for char in s:
+        if char == c:
+            found += 1
+    return found
+
+
+# تست
+import unittest
+from prog import count_c
+
+
+class TestCountC(unittest.TestCase):
+    def test_simple(self):
+        s = "raminr"
+        c = "r"
+        self.assertEqual(count_c(s, c), 2)
+
+
+if __name__ == "__main__":
+    unittest.main()

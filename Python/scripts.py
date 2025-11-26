@@ -1,12 +1,9 @@
-names = ['amir', 'ali', 'jadi']
 
-people = {
-   'amir': {'sen': 16, 'ghad': 180},
-   'jadi': {'sen': 45, 'ghad': 180}
-}
+def divide(a, b):
+    result = a / b
+    return result
 
-for name in names:
-   if name in people:
-      print(f'{name} is {people[name]['sen']} and his height is {people[name]['ghad']}')
-   else:
-      print(f'i have no data for {name}')
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+print("Result:", divide(num1, num2))
